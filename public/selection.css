@@ -1,0 +1,17 @@
+.selection-overlay {
+  position: fixed;
+  border: 2px dashed #007aff;
+  background-color: #007bff40;
+  pointer-events: none;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.block {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
