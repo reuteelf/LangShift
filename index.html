@@ -2,13 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Document</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <iframe id="sandbox" src="/sandbox.html" style="display: none"></iframe>
-    <script type="module" src="/src/main.js"></script>
+  <body class="flex flex-col h-dvh">
+    <!--Header-->
+    <header
+      class="flex flex-row items-center justify-end gap-4 h-12 px-4 shadow border-b"
+    >
+      <span id="status">status</span>
+      <button
+        id="menuBtn"
+        class="flex items-center justify-center text-xl h-9 w-9 border-2 rounded-full shadow cursor-pointer select-none bg-white hover:bg-gray-100 focus:ring-4 focus:ring-blue-100"
+      ></button>
+    </header>
+
+    <!--Main-->
+    <main class="flex flex-col flex-1 items-center p-4">
+      <!--Options-->
+      <section
+        id="options"
+        data-is-open="false"
+        class="flex flex-col w-full max-w-sm bg-white border shadow rounded-lg p-3 mb-3"
+      >
+        <!--Action Buttons-->
+        <div class="flex flex-row items-center gap-2">
+          <span
+            class="flex flex-row bg-gray-100 border shadow-inner p-2 rounded-full gap-2"
+            ><button
+              id="selectBtn"
+              title="Enable selection on page"
+              class="flex items-center justify-center text-xl h-9 w-9 border-2 rounded-full shadow cursor-pointer select-none bg-white hover:bg-gray-100 focus:ring-4 focus:ring-blue-100"
+            >
+              <i class="bi bi-fullscreen text-base leading-none"></i>
+            </button>
+            <button
+              id="clearBtn"
+              title="Clear selection on page"
+              class="flex items-center justify-center text-xl h-9 w-9 border-2 rounded-full shadow cursor-pointer select-none bg-white hover:bg-gray-100 focus:ring-4 focus:ring-blue-100"
+            >
+              <i class="bi bi-arrow-counterclockwise text-xl leading-none"></i>
+            </button>
+          </span>
+          <button
+            id="translateBtn"
+            title="Translate selected area"
+            class="flex items-center justify-center text-xl h-9 w-9 border-2 rounded-full shadow cursor-pointer select-none bg-white hover:bg-gray-100 focus:ring-4 focus:ring-blue-100"
+          >
+            <i class="bi bi-translate text-base leading-none"></i>
+          </button>
+        </div>
+
+        <!--Dropdowns-->
+        <div id="dropdowns" class="flex flex-col gap-2 mt-2"></div>
+      </section>
+
+      <!--Output Pad-->
+      <section
+        id="outputPad"
+        class="flex flex-col flex-1 bg-white border shadow rounded-lg w-full p-4"
+      >
+        <h1 class="text-xl font-semibold leading-none text-gray-700 mb-4">
+          Outpat Pad
+        </h1>
+        <p
+          class="flex flex-1 items-center text-base text-balance justify-center text-gray-700 px-2 mb-4"
+        >
+          Nothing to show
+        </p>
+      </section>
+    </main>
+
+    <iframe id="sandbox" src="./sandbox.html" class="hidden"> </iframe>
+
+    <!--Footer-->
+    <footer class="flex items-center justify-end h-8 px-4">
+      <p class="text-xs text-gray-800">&copy; LangShift</p>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

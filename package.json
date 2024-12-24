@@ -1,7 +1,8 @@
 {
   "name": "langshift",
+  "description": "An chrome extension to translate a part of the webpage",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,11 +12,17 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0-beta.3",
     "postcss": "^8.4.49",
-    "rollup-plugin-visualizer": "^5.12.0",
     "tailwindcss": "^4.0.0-beta.3",
     "vite": "^6.0.1"
   },
   "sideEffects": [
-    "src/background.js"
-  ]
+    "./src/util/handler.js",
+    "./src/util/translate.js",
+    "./src/components/status.js",
+    "./src/components/menuBtn.js",
+    "./src/components/dropdown.js"
+  ],
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3"
+  }
 }
